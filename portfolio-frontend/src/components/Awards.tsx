@@ -22,7 +22,7 @@ export default function Awards() {
 
   // 取得award資料
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/award")
+    fetch(`${process.env.NEXT_PUBLIC_FASTAPI_URL}/award`)
       .then((res) => res.json())
       .then((data: AwardApiResponse[]) => {
         setAward(data);
@@ -32,7 +32,7 @@ export default function Awards() {
 
   // 取得certificate資料
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/certificates")
+    fetch(`${process.env.NEXT_PUBLIC_FASTAPI_URL}/certificates`)
       .then((res) => res.json())
       .then((data: certificateApiResponse[]) => {
         setCertificate(data);

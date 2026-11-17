@@ -13,12 +13,11 @@ class Settings(BaseSettings):
     postgres_user: str
     postgres_password: str
     postgres_db: str
-
-    # FastAPI 目前在 Windows 本機執行
     database_host: str = "127.0.0.1"
     database_port: int = 15433
 
     admin_api_key: str | None = None
+    frontend_url: str = "http://127.0.0.1:3000"
 
     model_config = SettingsConfigDict(
         env_file=PROJECT_ROOT / ".env",

@@ -12,8 +12,14 @@ export default async function ProjectDetail({ params }: Props) {
   const { slug } = await params;
 
   // get the data of project
-  const response = await fetch("http://127.0.0.1:8000/projects", {
-    cache: "no-cache",
+  const apiUrl = process.env.NEXT_PUBLIC_FASTAPI_URL;
+
+  if (!apiUrl) {
+    throw new Error("NEXT_PUBLIC_FASTAPI_URL 尚未設定");
+  }
+
+  const response = await fetch(`${apiUrl}/projects`, {
+    cache: "no-store",
   });
 
   if (!response.ok) {

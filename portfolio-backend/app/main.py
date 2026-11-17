@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from app.core.config import settings
 
 # router
 from app.api.Awards import router as awards_router
@@ -13,16 +14,18 @@ app = FastAPI(
     version="0.1.0"
 )
 
-orgins = [
-    "http://127.0.0.1:3000"
+origins = [
+    "http://127.0.0.1:3000",
+    "http://localhost:3000",
+    settings.frontend_url.rstrip("/"),
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=orgins,
+    allow_origins=origins,
     allow_credentials=True,
     allow_methods=["*"],
-    allow_headers=["*"]
+    allow_headers=["*"],
 )
 
 app.include_router(awards_router)

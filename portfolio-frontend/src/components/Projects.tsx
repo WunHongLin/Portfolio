@@ -13,7 +13,7 @@ export default function Projects() {
   const [projects, setProjects] = useState<Project[]>([]);
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/projects")
+    fetch(`${process.env.NEXT_PUBLIC_FASTAPI_URL}/projects`)
       .then((res) => res.json())
       .then((data: Project[]) => {
         setProjects(data);
