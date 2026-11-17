@@ -1,0 +1,2 @@
+import Link from "next/link";
+export default function NotFound(){return <main className="flex min-h-[65vh] flex-col items-center justify-center px-6 text-center"><p className="section-index">404 / NOT FOUND</p><h1 className="font-display mt-4 text-4xl font-semibold">找不到這個頁面</h1><p className="mt-3 text-sm text-[#85756c]">這個作品可能尚未建立，或連結已經變更。</p><Link href="/" className="brown-button mt-7 px-6 py-3 text-sm">返回首頁</Link></main>}

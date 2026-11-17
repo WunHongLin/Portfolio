@@ -1,0 +1,178 @@
+@import "tailwindcss";
+:root {
+  --site-background: #fbf9f5;
+  --site-primary: #49382f;
+  --site-secondary: #78665a;
+  --site-accent: #a77b65;
+}
+@theme inline {
+  --color-background: var(--site-background);
+  --color-primary: var(--site-primary);
+  --color-secondary: var(--site-secondary);
+  --color-accent: var(--site-accent);
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--site-background);
+  color: var(--site-primary);
+  font-family:
+    "Microsoft JhengHei", "PingFang TC", "Noto Sans TC", ui-sans-serif,
+    system-ui, sans-serif;
+}
+button,
+a,
+input,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+.font-display {
+  font-family: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+}
+.logo-mark {
+  font-family: Georgia, "Times New Roman", serif;
+  font-style: italic;
+  letter-spacing: -0.09em;
+  line-height: 1;
+}
+
+.section-index {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  font-weight: 700;
+  color: #ad775a;
+}
+.section-heading {
+  font-family: "Noto Serif TC", "Songti TC", "PMingLiU", Georgia, serif;
+  font-size: clamp(34px, 4vw, 46px);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  color: #3d312b;
+}
+.brown-button {
+  border-radius: 999px;
+  background: #976b52;
+  color: white;
+  font-weight: 600;
+  transition:
+    background 0.2s,
+    transform 0.2s;
+  text-decoration: none;
+}
+.brown-button:hover {
+  background: #7e513b;
+  transform: translateY(-1px);
+}
+.profile-shadow {
+  box-shadow: 0 16px 36px rgba(82, 55, 40, 0.15);
+}
+.nav-link {
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-link:hover:after {
+  content: "";
+  position: absolute;
+  bottom: -9px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: #aa785e;
+}
+.round-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43px;
+  height: 43px;
+  border: 1px solid #aa785e;
+  border-radius: 50%;
+  color: #976b52;
+  transition: background 0.2s;
+}
+.round-arrow:hover:not(:disabled) {
+  background: #f5ebe3;
+}
+.round-arrow:disabled {
+  opacity: 0.35;
+}
+.project-track {
+  scrollbar-width: thin;
+  scrollbar-color: #b99c88 transparent;
+}
+.project-track::-webkit-scrollbar {
+  height: 5px;
+}
+.project-track::-webkit-scrollbar-thumb {
+  background: #b99c88;
+  border-radius: 5px;
+}
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid #a77b65;
+  border-radius: 30px;
+  padding: 10px 12px;
+  color: #a77b65;
+  font-size: 12px;
+}
+.social-link:hover {
+  background-color: #a77b65;
+  color: white;
+  transition: 0.3s;
+}
+.field-label {
+  margin-bottom: 7px;
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  color: #6c5c52;
+}
+.form-input {
+  width: 100%;
+  border: 1px solid #e5dbd3;
+  border-radius: 7px;
+  background: #fcfaf8;
+  padding: 12px 13px;
+  font-size: 13px;
+  color: #49382f;
+  outline: none;
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+.form-input::placeholder {
+  color: #b0a39b;
+}
+.form-input:focus {
+  border-color: #a77b65;
+  box-shadow: 0 0 0 3px rgba(167, 123, 101, 0.1);
+}
+.form-input[aria-invalid="true"] {
+  border-color: #b4544c;
+}
+@media (max-width: 639px) {
+  .section-pad {
+    padding-block: 65px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .brown-button,
+  .nav-link,
+  .form-input {
+    transition: none;
+  }
+}
