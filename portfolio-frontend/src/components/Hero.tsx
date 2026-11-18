@@ -7,7 +7,8 @@ import { site } from "@/lib/site";
 export default function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative">
-      <div className="relative overflow-hidden bg-[#55483f] sm:h-117.5 lg:h-132.5">
+      {/* 背景區塊 */}
+      <div className="relative h-[360px] overflow-hidden bg-[#55483f] sm:h-[470px] lg:h-[530px]">
         <Image
           src="/images/背景.jpg"
           alt=""
@@ -16,64 +17,78 @@ export default function Hero() {
           sizes="100vw"
           className="object-cover object-center"
         />
+
         <div className="absolute inset-0 bg-linear-to-r from-[#2e2927]/85 via-[#2e2927]/45 to-transparent" />
-        <Container className="relative flex h-full items-center">
-          <div className="max-w-240 pb-16 text-white">
+
+        <Container className="relative flex h-full items-start pt-8 sm:items-center sm:pt-0">
+          <div className="w-full max-w-[960px] text-white">
             <h1
               id="hero-title"
-              className="pb-4 border-b-2 font-display text-[16px] font-semibold leading-[1.55] tracking-[.06em] sm:text-3xl lg:text-[40px]"
+              className="max-w-full border-b-2 pb-4 font-display text-lg font-semibold leading-relaxed tracking-wide break-words sm:text-3xl lg:text-[40px]"
             >
               Forget the cage，
               <br />
               cause we know how to make the key.
             </h1>
-            <hr />
-            <p className="mt-8 max-w-95 font-semibold leading-8 tracking-wider text-white/85 sm:text-2xl lg:text-[28px]">
+
+            <p className="mt-5 font-semibold tracking-wider text-white/85 sm:mt-8 sm:text-2xl lg:text-[28px]">
               打破框架，突破自己
             </p>
           </div>
         </Container>
       </div>
-      <Container className="relative z-10 -mt-22">
-        <div className="profile-shadow grid items-center gap-5 rounded-[22px] border border-white/75 bg-[#fcfaf7] px-6 py-7 sm:grid-cols-[auto_1fr_auto] sm:px-10 lg:gap-10">
-          <div className="relative mx-auto overflow-hidden rounded-full border-[6px] border-white shadow-lg sm:mx-0 sm:size-41.25">
+
+      {/* 個人介紹卡片 */}
+      <Container className="relative z-10 -mt-12 sm:-mt-20 lg:-mt-22">
+        <div className="profile-shadow grid grid-cols-1 items-center gap-6 rounded-[22px] border border-white/75 bg-[#fcfaf7] px-5 py-8 sm:px-8 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:gap-8 lg:px-10">
+          {/* 大頭貼 */}
+          <div className="relative mx-auto size-28 shrink-0 overflow-hidden rounded-full border-[6px] border-white shadow-lg sm:size-36 lg:mx-0 lg:size-40">
             <Image
               src="/images/大頭貼.jpg"
-              alt=""
+              alt="個人大頭貼"
               fill
-              sizes="150px"
+              sizes="(min-width: 1024px) 160px, 144px"
               className="object-cover"
             />
           </div>
-          <div className="text-center sm:text-left">
-            <p className="text-[12px] tracking-[.23em] text-[#aa795c] mb-2 font-bold">
+
+          {/* 個人資訊 */}
+          <div className="min-w-0 text-center lg:text-left">
+            <p className="mb-2 text-xs font-bold tracking-[.23em] text-[#aa795c]">
               HELLO, I AM
             </p>
-            <h2 className="font-display text-[30px] font-bold tracking-[.14em] text-[#342b26] sm:text-[32px] mb-2">
+
+            <h2 className="mb-2 font-display text-2xl font-bold tracking-[.08em] text-[#342b26] break-words sm:text-[32px]">
               {site.name}
             </h2>
-            <p className="mt-2 text-sm tracking-widest text-[#76665e] mb-2">
+
+            <p className="mt-2 text-sm tracking-wider text-[#76665e]">
               {site.role}
             </p>
-            <p className="mt-4 flex items-center justify-center gap-1.5 text-xs text-[#86776e] sm:justify-start mb-2">
+
+            <p className="mt-4 flex items-center justify-center gap-1.5 text-xs text-[#86776e] lg:justify-start">
               <MapPin size={13} />
               {site.location}
             </p>
           </div>
 
-          <div className="flex flex-col gap-4 items-end">
+          {/* 操作按鈕 */}
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:flex-col lg:items-stretch">
             <Link
-              href="file/履歷.pdf"
+              href="/file/履歷.pdf"
               target="_blank"
-              className="brown-button mx-auto inline-flex items-center gap-3 px-6 py-3 text-sm sm:mx-0"
+              className="brown-button inline-flex items-center justify-center gap-3 px-6 py-3 text-sm whitespace-nowrap"
             >
-              下載履歷 <ArrowUpRight size={17} />
+              下載履歷
+              <ArrowUpRight size={17} />
             </Link>
+
             <Link
               href="/#projects"
-              className="brown-button mx-auto inline-flex items-center gap-3 px-6 py-3 text-sm sm:mx-0"
+              className="brown-button inline-flex items-center justify-center gap-3 px-6 py-3 text-sm whitespace-nowrap"
             >
-              探索我的作品 <ArrowUpRight size={17} />
+              探索我的作品
+              <ArrowUpRight size={17} />
             </Link>
           </div>
         </div>
