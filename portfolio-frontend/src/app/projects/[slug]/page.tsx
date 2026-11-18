@@ -62,7 +62,7 @@ export default async function ProjectDetail({ params }: Props) {
           {/* 左側：專案概述 */}
           <div className="min-w-0">
             <h2 className="font-display text-2xl font-bold text-[#49382f]">
-              專案概述
+              專案介紹
             </h2>
 
             <p className="mt-5 w-full whitespace-pre-line text-justify text-base leading-9 text-[#77665e]">
