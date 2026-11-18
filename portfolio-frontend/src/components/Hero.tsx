@@ -20,7 +20,7 @@ export default function Hero() {
 
         <div className="absolute inset-0 bg-linear-to-r from-[#2e2927]/85 via-[#2e2927]/45 to-transparent" />
 
-        <Container className="relative flex h-full items-start pt-8 sm:items-center sm:pt-0">
+        <Container className="relative flex h-full items-center pt-0">
           <div className="w-full max-w-240 text-white">
             <h1
               id="hero-title"
