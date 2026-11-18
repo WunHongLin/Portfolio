@@ -58,7 +58,7 @@ export default async function ProjectDetail({ params }: Props) {
           />
         </div>
 
-        <div className="mt-10 grid items-start gap-8 border-t border-[#e8dcd2] pt-9 md:grid-cols-[minmax(0,1fr)_320px]">
+        <div className="mt-10 grid items-start gap-16 border-t border-[#e8dcd2] pt-9 md:grid-cols-[minmax(0,1fr)_320px]">
           {/* 左側：專案概述 */}
           <div className="min-w-0">
             <h2 className="font-display text-2xl font-bold text-[#49382f]">
@@ -67,10 +67,6 @@ export default async function ProjectDetail({ params }: Props) {
 
             <p className="mt-5 w-full whitespace-pre-line text-justify text-base leading-9 text-[#77665e]">
               {project.details}
-            </p>
-
-            <p className="mt-5 text-xs text-[#9b8577]">
-              * 此專案資料為作品集版型展示範例，非真實專案成果。
             </p>
           </div>
 
