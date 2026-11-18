@@ -8,7 +8,7 @@ export default function Hero() {
   return (
     <section aria-labelledby="hero-title" className="relative">
       {/* 背景區塊 */}
-      <div className="relative h-[360px] overflow-hidden bg-[#55483f] sm:h-[470px] lg:h-[530px]">
+      <div className="relative h-90 overflow-hidden bg-[#55483f] sm:h-117.5 lg:h-132.5">
         <Image
           src="/images/背景.jpg"
           alt=""
@@ -21,10 +21,10 @@ export default function Hero() {
         <div className="absolute inset-0 bg-linear-to-r from-[#2e2927]/85 via-[#2e2927]/45 to-transparent" />
 
         <Container className="relative flex h-full items-start pt-8 sm:items-center sm:pt-0">
-          <div className="w-full max-w-[960px] text-white">
+          <div className="w-full max-w-240 text-white">
             <h1
               id="hero-title"
-              className="max-w-full border-b-2 pb-4 font-display text-lg font-semibold leading-relaxed tracking-wide break-words sm:text-3xl lg:text-[40px]"
+              className="max-w-full border-b-2 pb-4 font-display text-lg font-semibold leading-relaxed tracking-wide wrap-break-words sm:text-3xl lg:text-[40px]"
             >
               Forget the cage，
               <br />
@@ -58,7 +58,7 @@ export default function Hero() {
               HELLO, I AM
             </p>
 
-            <h2 className="mb-2 font-display text-2xl font-bold tracking-[.08em] text-[#342b26] break-words sm:text-[32px]">
+            <h2 className="mb-2 font-display text-2xl font-bold tracking-[.08em] text-[#342b26] wrap-break-words sm:text-[32px]">
               {site.name}
             </h2>
 
