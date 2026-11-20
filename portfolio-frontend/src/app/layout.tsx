@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: `${site.name} | 個人作品集`,
+  title: `${site.name} | 個人形象網站`,
   description: "以設計與程式記錄作品、學習歷程與創作想法。",
 };
 
